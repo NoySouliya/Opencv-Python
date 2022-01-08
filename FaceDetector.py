@@ -4,7 +4,7 @@ import numpy as np
 faceDetect = cv2.CascadeClassifier('Detect/haarcascade_frontalface_default.xml')
 cam = cv2.VideoCapture(0)
 rec = cv2.face.LBPHFaceRecognizer_create()
-rec.read("Recognizer\\trainingData.yml")
+rec.read("Recognizer\\trainingData.xml")
 ID = 0
 fontface=cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 2
@@ -20,7 +20,9 @@ while(True):
         if(ID==1):
             ID="Souliya"
         elif(ID==2):
-            ID="Kheuleu"
+            ID="Athid"
+        elif(ID==3):
+            ID="Phimon"
         cv2.putText(img, str(ID), (x, y+h), fontface, fontScale, fontColor )
     cv2.imshow("Face", img)
     if(cv2.waitKey(1) & 0xFF == ord('q')):
